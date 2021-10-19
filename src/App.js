@@ -4,17 +4,27 @@ import './App.css';
 
 // import files
 import Homepage from './Components/Homepage/Homepage';
+import Registation from './Components/Accounts/Registraion';
+// import AuthPro from './context/AuthProvider';
+import AuthProvider from './context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      <AuthProvider>
+      {/* <AuthPro> */}
+        <Router>
         <Switch>
-          <Route>
+          <Route exact path="/">
             <Homepage />
+          </Route>
+          <Route exact path="/registration">
+            <Registation />
           </Route>
         </Switch>
       </Router>
+      {/* </AuthPro> */}
+      </AuthProvider>
     </div>
   );
 }

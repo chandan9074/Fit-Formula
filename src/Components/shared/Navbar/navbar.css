@@ -2,3 +2,8 @@
   background: rgba(116, 129, 116, 0.3);
   color: aliceblue;
 }
+
+.nav-btn {
+  text-decoration: none;
+  color: white;
+}
