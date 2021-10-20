@@ -19,7 +19,7 @@ import { useEffect, useState } from 'react';
 function App() {
 
   const [ services ] = useServices();
-  const [reload, setReload] = useState(false)
+  // const [reload, setReload] = useState(false)
 
   // useEffect(()=>{
   //   handleReload();
