@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword , onAuthStateChanged, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword , onAuthStateChanged, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile} from "firebase/auth";
 import { useEffect, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import initializeAuthentication from "../firebase/firebase.init";
@@ -9,6 +9,7 @@ const useFirebase = () =>{
     const [user, setUser] = useState({});
     const [error, setError] = useState("")
     const [email, setEmail] = useState("");
+    const [name, setName] = useState("")
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(true);
     const location = useLocation();
@@ -29,6 +30,7 @@ const useFirebase = () =>{
         createUserWithEmailAndPassword(auth, email, password)
         .then((res) => {
             setUser(res.user);
+            setUserDetails();
             history.push(redirectUrl)
             setError("")
         })
@@ -59,7 +61,16 @@ const useFirebase = () =>{
         history.push(redirectUrl);
       })
       .finally(() => setLoading(false));
-  };
+    };
+    
+    const setUserDetails = () => {
+            updateProfile(auth.currentUser, { displayName: name })
+                .then(result => {
+                })
+                .catch(error => {
+                    setError(error.message);
+                })
+        }
 
   // this is a auth observer with observe all changes for the user
 
@@ -89,7 +100,9 @@ const useFirebase = () =>{
         loading,
         googleSignIn,
         error,
-        setError
+        setError, 
+        setName,
+        setUserDetails
     };
 }
 

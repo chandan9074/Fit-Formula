@@ -13,9 +13,12 @@ import './accounts.css';
 
 const Registation = () => {
 
-    const {setEmail, setPassword, createSingInWithEmail, googleSignIn, error, setError} = useAuth();
+    const {setEmail,setName, setPassword, createSingInWithEmail, googleSignIn, error, setError} = useAuth();
     const [isLogin , setIsLogin] = useState(true);
 
+    const handleName = (e) =>{
+        setName(e.target.value);
+    }
     const handleEmail = (e) =>{
         setEmail(e.target.value);
     }
@@ -46,6 +49,7 @@ const Registation = () => {
                 <div className="p-10 bg-gray-600 reg-right-part">
                 <h1 className="text-gray-200">Registration</h1>
                 <form onSubmit={(e)=>createSingInWithEmail(e)} className="flex flex-col justify-center">
+                    <input type="text" required onChange={handleName} placeholder="Enter FullName" className="inpt-f"/>
                     <input type="email" required onChange={handleEmail} placeholder="Enter Email" className="inpt-f"/>
                     <input type="password" required onChange={handlePassword} placeholder="Enter Password" className="inpt-f" />
                     {error ? <p className="p-2 bg-yellow-300 rounded-lg mt-3 w-80">{error}</p>:null}
