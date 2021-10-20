@@ -87,27 +87,28 @@
 .offer-img-1 {
   position: absolute;
   width: 30rem;
-  top: 195rem;
+  top: 6rem;
   left: 20rem;
 }
 
 .offer-img-2 {
   position: absolute;
   width: 30rem;
-  top: 195rem;
+  top: 6rem;
   left: 40rem;
 }
 
 .offer-des {
   position: absolute;
-  top: 212rem;
+  top: 23rem;
   left: 45rem;
   padding: 3rem 3rem;
   border-radius: 100%;
 }
 
 .offer-part {
-  margin-bottom: 45rem;
+  margin-bottom: 40rem;
+  position: relative;
 }
 
 .hm-topic-underline {
