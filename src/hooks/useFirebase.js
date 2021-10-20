@@ -7,6 +7,7 @@ initializeAuthentication();
 const useFirebase = () =>{
 
     const [user, setUser] = useState({});
+    const [error, setError] = useState("")
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(true);
@@ -18,14 +19,21 @@ const useFirebase = () =>{
 
     const auth = getAuth();
     const createSingInWithEmail = (e) =>{
-        e.preventDefault();
+        e.preventDefault();    
+        if (!/(?=.*[A-Z])(?=.*[0-9])(?=.*[a-z]).{6}/.test(password)) {
+            setError(
+                "Password at least 6 char, 1 uppercase and 1 lowercase, 1 digits "
+            );
+            return;
+        }
         createUserWithEmailAndPassword(auth, email, password)
         .then((res) => {
             setUser(res.user);
+            history.push(redirectUrl)
+            setError("")
         })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            setError(error.message);
         });
     }
     const signInWithEmail = (e) =>{
@@ -33,10 +41,11 @@ const useFirebase = () =>{
         signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
             setUser(res.user);
-            history.push(redirectUrl)})
+            history.push(redirectUrl)
+            setError("")
+        })
         .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
+            setError(error.message);
         });
 
     }
@@ -78,7 +87,9 @@ const useFirebase = () =>{
         signInWithEmail,
         logout,
         loading,
-        googleSignIn
+        googleSignIn,
+        error,
+        setError
     };
 }
 

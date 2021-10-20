@@ -14,7 +14,7 @@ import './accounts.css';
 
 const Registation = () => {
 
-    const {setEmail, setPassword, createSingInWithEmail, googleSignIn} = useAuth();
+    const {setEmail, setPassword, createSingInWithEmail, googleSignIn, error, setError} = useAuth();
     const [isLogin , setIsLogin] = useState(true);
 
     const handleEmail = (e) =>{
@@ -27,9 +27,11 @@ const Registation = () => {
     // handle toggle by those function 
     const handleLogin = () =>{
         setIsLogin(true);
+        setError("");
     }
     const handleSignIn = () =>{
         setIsLogin(false);
+        setError("");
     }
 
     return ( 
@@ -47,9 +49,10 @@ const Registation = () => {
                 <form onSubmit={(e)=>createSingInWithEmail(e)} className="flex flex-col justify-center">
                     <input type="email" required onChange={handleEmail} placeholder="Enter Email" className="inpt-f"/>
                     <input type="password" required onChange={handlePassword} placeholder="Enter Password" className="inpt-f" />
-                    <button type="submit" className="visit-btn rounded-lg font-semibold mt-3">Signup</button>
+                    {error ? <p className="p-2 bg-yellow-300 rounded-lg mt-3 w-80">{error}</p>:null}
+                    <button type="submit" className="visit-btn rounded-lg font-semibold mt-3">Register</button>
                 </form>
-                    <p className="text-gray-300 font-semibold mt-2">Already have an account? <button onClick={handleLogin} className="sign">Sign in</button></p>
+                    <p className="text-gray-300 font-semibold mt-2">Already have an account? <button onClick={handleLogin} className="sign">Log in</button></p>
                     <p className="text-gray-300 text-md">-----or You can also use this------</p>
                     <div className="flex justify-center">
                         <button onClick={googleSignIn}><img src={google} alt="google" className="google-btn" /></button>

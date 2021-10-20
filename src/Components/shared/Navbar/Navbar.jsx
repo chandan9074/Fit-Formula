@@ -29,14 +29,14 @@ const Navigation = () => {
                     </Nav.Link>
                 </Nav>
                 <Nav>
-                    <Nav.Link><img src={user.photoURL} alt="" className="nav-user-img" /></Nav.Link>
+                    {user.photoURL? <Nav.Link><img src={user.photoURL} alt="" className="nav-user-img" /></Nav.Link>:null}
                     <Nav.Link className=" text-xl">{user.displayName}</Nav.Link>
                     {user.email? 
                 <Nav.Link>
                         <Link to="/"  className="nav-btn nav-account-btn  text-xl" onClick={logout}>Logout</Link>
                     </Nav.Link>:
                     <Nav.Link >
-                        <Link to="/accounts"  className="nav-btn nav-account-btn  text-xl" onClick={logout}>Registration</Link>
+                        <Link to="/accounts"  className="nav-btn nav-account-btn  text-xl" onClick={logout}>Login | Registration</Link>
                     </Nav.Link>    
                 }
                 </Nav>
