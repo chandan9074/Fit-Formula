@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 
 // import files
 import reg from './images/reg.jpg';
-import useFirebase from '../../hooks/useFirebase';
 import Navigation from '../shared/Navbar/Navbar';
 import Login from './Login';
 import useAuth from '../../hooks/useAuth';
