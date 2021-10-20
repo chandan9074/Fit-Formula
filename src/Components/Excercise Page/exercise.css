@@ -1,0 +1,29 @@
+.excercise-point {
+  background-color: lightseagreen;
+  width: 25rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0 1rem 1rem 0;
+  border-left: 5px solid black;
+  margin: 1rem 0;
+}
+.underline {
+  width: 10rem;
+  border-top: 2px solid rgb(204, 200, 200);
+  margin: 0;
+}
+.gymn-img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 100%;
+}
+
+@media onlY screen and (min-width: 0px) and (max-width: 688px) {
+  .excercise-point {
+    background-color: lightseagreen;
+    width: 18rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0 1rem 1rem 0;
+    border-left: 5px solid black;
+    margin: 1rem 0;
+  }
+}

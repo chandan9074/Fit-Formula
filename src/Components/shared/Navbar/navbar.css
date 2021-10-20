@@ -5,5 +5,8 @@
 
 .nav-btn {
   text-decoration: none;
-  color: white;
+  color: rgb(201, 198, 198);
+}
+.nav-btn:hover {
+  color: rgb(253, 252, 252);
 }

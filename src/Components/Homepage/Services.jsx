@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import './homepage.css';
 
 const Services = (props) => {
-    const {name, img, description} = props.service;
+    const {name, img, description, id} = props.service;
     return ( 
         <div className="service-card pb-4 flex flex-col items-center">
             <img src={img} alt="" className="service-card-img" />
@@ -15,7 +15,7 @@ const Services = (props) => {
                 <h1 className="text-3xl font-bold service-title">{name}</h1>
                 <h3 className="text-xl">{description}</h3>
             </div>
-            <Link to="" className="visit-btn rounded-full font-semibold">Details</Link>
+            <Link to={`/details/${name}`} state={{ from: props.service }} className="visit-btn rounded-full font-semibold">Details</Link>
         </div>
      );
 }

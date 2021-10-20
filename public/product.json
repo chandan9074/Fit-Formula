@@ -1,0 +1,56 @@
+[
+    {
+        "id":1,
+        "img": "https://5.imimg.com/data5/EM/MA/MY-2657327/single-station-gym-pec-fly-rear-delt-500x500.png",
+        "name":"Single station gym",
+        "price":"2000"
+    },
+    {
+        "id":2,
+        "img": "https://i0.wp.com/primofitnessusa.com/wp-content/uploads/2019/02/1MTH083-Leg-Curling.png?fit=1099%2C1080&ssl=1",
+        "name":"Single station gym",
+        "price":"2000"
+    },
+    {
+        "id":3,
+        "img": "https://corehandf.com/wp-content/uploads/2021/04/Belly-Band-2.png",
+        "name":"Stair master",
+        "price":"2000"
+    },
+    {
+        "id":4,
+        "img": "https://sc04.alicdn.com/kf/Hc181908c38694fd28d68e84883a384f8V/232918787/Hc181908c38694fd28d68e84883a384f8V.png",
+        "name":"Yellow Nike",
+        "price":"2000"
+    },
+    {
+        "id":5,
+        "img": "https://sc04.alicdn.com/kf/H34153d251c4a492baaf04a35bd9e92d10.png",
+        "name":"White Sharp",
+        "price":"2000"
+    },
+    {
+        "id":6,
+        "img": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1631225820-react-infinity-run-flyknit-2-womens-running-shoe-rfh6Z8.png?crop=1.00xw:0.490xh;0,0.306xh&resize=480%3A%2A",
+        "name":"Nike",
+        "price":"2000"
+    },
+    {
+        "id":7,
+        "img": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1598554705-Ten_Thousand_3-4-compression-tight-black-front-X_31a274c2-626e-46ba-9656-9f3a0f719444_1200x1200.png?crop=0.678xw:1xh;center,top&resize=320%3A%2A",
+        "name":"Black Blur",
+        "price":"2000"
+    },
+    {
+        "id":8,
+        "img": "https://cdn.gethypervisual.com/images/shopify/9d22777e-ecf9-4543-885d-9a23d9dc3a95/w1200_509e_xs-high-waisted-abstract-women-s-capri-length-workout-leggings-14372722442325.png",
+        "name":"Zone pant",
+        "price":"2000"
+    },
+    {
+        "id":9,
+        "img": "https://media.self.com/photos/590a160b9fa6662ed53befcd/1:1/w_950,h_950,c_limit/new-balance-capris.png",
+        "name":"Shade part",
+        "price":"2000"
+    }
+]

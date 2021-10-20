@@ -1,0 +1,31 @@
+.reg-card {
+  height: 90vh;
+}
+.reg-img {
+  width: 20rem;
+  height: 30rem;
+}
+.reg-right-part {
+  height: 30rem;
+}
+.inpt-f {
+  background-color: transparent;
+  box-shadow: 0 0 0.5rem rgb(80, 79, 79);
+  border: 2px solid lightskyblue;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  color: aliceblue;
+  font-size: 1.1rem;
+}
+.sign {
+  color: turquoise;
+  text-decoration: underline;
+}
+
+.google-btn {
+  border: 2px solid lightskyblue;
+  padding: 0.5rem;
+  width: 3rem;
+  border-radius: 100%;
+}

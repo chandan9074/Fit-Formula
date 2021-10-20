@@ -1,0 +1,20 @@
+.product-img {
+  width: 15rem;
+  height: 15rem;
+}
+.product-card {
+  width: 25rem;
+  box-shadow: 0 0 0.5rem rgb(56, 56, 56);
+}
+.product-title {
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prod-icon:hover {
+  font-size: 2rem;
+  transition: 0.5s;
+  cursor: pointer;
+}

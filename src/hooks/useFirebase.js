@@ -1,5 +1,6 @@
-import { getAuth, createUserWithEmailAndPassword , onAuthStateChanged, signOut, signInWithEmailAndPassword} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword , onAuthStateChanged, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 import { useEffect, useState } from "react";
+import { useHistory, useLocation } from "react-router";
 import initializeAuthentication from "../firebase/firebase.init";
 
 initializeAuthentication();
@@ -8,6 +9,12 @@ const useFirebase = () =>{
     const [user, setUser] = useState({});
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loading, setLoading] = useState(false);
+    const location = useLocation();
+    const history = useHistory();
+    const redirectUrl = location.state?.form || '/';
+
+    const googleprovider = new GoogleAuthProvider();
 
     const auth = getAuth();
     const createSingInWithEmail = (e) =>{
@@ -27,13 +34,12 @@ const useFirebase = () =>{
         e.preventDefault();
     }
     const signInWithEmail = (e) =>{
+        setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
-            // Signed in 
             setUser(res.user);
-            console.log("hello", res.user)
-            // ...
-        })
+            history.push(redirectUrl)})
+        .finally(() => setLoading(false))
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
@@ -42,10 +48,24 @@ const useFirebase = () =>{
         e.preventDefault();
     }
 
+    const googleSignIn = () => {
+    setLoading(true);
+
+    signInWithPopup(auth, googleprovider)
+      .then((result) => {
+        setUser(result.user);
+        history.push(redirectUrl);
+      })
+      .finally(() => setLoading(false));
+  };
+
+  // this is a auth observer with observe all changes for the user
+
     const logout = () =>{
         signOut(auth).then(() => {
             setUser({});
         })
+        .finally(() => setLoading(false))
     }
 
     useEffect(()=>{
@@ -53,16 +73,19 @@ const useFirebase = () =>{
         if (user) {
             setUser(user);
         }
+        setLoading(false)
         });
-    })
+    },[])
 
     return {
-        user, 
-        createSingInWithEmail, 
+        user,
+        createSingInWithEmail,
         setEmail,
         setPassword,
         signInWithEmail,
-        logout
+        logout,
+        loading,
+        googleSignIn
     };
 }
 

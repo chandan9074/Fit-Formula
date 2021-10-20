@@ -8,14 +8,20 @@ import reg from './images/reg.jpg';
 import useFirebase from '../../hooks/useFirebase';
 import Navigation from '../shared/Navbar/Navbar';
 import Login from './Login';
+// import useServices from '../../hooks/useServices';
+import useAuth from '../../hooks/useAuth';
+import homebg from '../Homepage/images/hm-bg.png';
+import google from './images/google.png';
+import './accounts.css';
 
 
 const Registation = () => {
 
     // const [email, setEmail] = useState("");
     // const [password, setPassword] = useState("");
-    const {setEmail, setPassword, createSingInWithEmail} = useFirebase();
+    const {setEmail, setPassword, createSingInWithEmail, googleSignIn} = useAuth();
     const [isLogin , setIsLogin] = useState(false);
+    
 
 
     // const auth = getAuth();
@@ -56,21 +62,26 @@ const Registation = () => {
 
     return ( 
         <div>
+            <img src={homebg} alt="" className="home-bg" srcset="" />
             <Navigation />
-            <div className="flex">
-            <div className="w-2/4">
-                <img src={reg} alt="" srcset="" className="w-5/6 h-screen" />
-            </div>
+            <div className="flex  reg-card justify-center mt-20">
+                <div className="reg-card hidden md:block">
+                    <img src={reg} alt="" className=" reg-img" />
+                </div>
             
                 {isLogin? <Login handleSignIn={handleSignIn} /> :
-                <div className="w-2/4">
-                <h1>Registration</h1>
+                <div className="p-10 bg-gray-600 reg-right-part">
+                <h1 className="text-gray-200">Registration</h1>
                 <form onSubmit={(e)=>createSingInWithEmail(e)} className="flex flex-col justify-center">
-                    <input type="email" required onChange={handleEmail} />
-                    <input type="password" required onChange={handlePassword} />
-                    <button type="submit" className="bg-green-300">Signup</button>
+                    <input type="email" required onChange={handleEmail} placeholder="Enter Email" className="inpt-f"/>
+                    <input type="password" required onChange={handlePassword} placeholder="Enter Password" className="inpt-f" />
+                    <button type="submit" className="visit-btn rounded-lg font-semibold mt-3">Signup</button>
                 </form>
-                    <p>Already have an account? <button onClick={handleLogin}>Sign in</button></p>
+                    <p className="text-gray-300 font-semibold mt-2">Already have an account? <button onClick={handleLogin} className="sign">Sign in</button></p>
+                    <p className="text-gray-300 text-md">-----or You can also use this------</p>
+                    <div className="flex justify-center">
+                        <button onClick={googleSignIn}><img src={google} alt="google" className="google-btn" /></button>
+                    </div>
                 </div>}
             </div>
         </div>
