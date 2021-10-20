@@ -44,7 +44,10 @@ const Homepage = () => {
             {/* services part  */}
             <section className="services-part container mt-8">
                 <div className="flex justify-between items-center mb-3">
-                    <h1 className="text-gray-200">Services</h1>
+                    <div>
+                        <h1 className="text-gray-200">Services</h1>
+                        <div className="hm-topic-underline"></div>
+                    </div>
                     <Link to="" className="visit-btn rounded-full font-semibold">See more</Link>
                 </div>
                 <div className="grid md:grid-cols-3 gap-5">
@@ -56,13 +59,16 @@ const Homepage = () => {
 
             <section className="food-part container mt-8">
                 <div className="flex justify-between items-center mb-3">
-                    <h1 className="text-gray-200">Healthy Food</h1>
+                    <div>
+                        <h1 className="text-gray-200">Healthy Food</h1>
+                        <div className="hm-topic-underline"></div>
+                    </div>
                     <Link to="" className="visit-btn rounded-full font-semibold">See more</Link>
                 </div>
                 <div>
                     <div className="row">
                         <div className="col-md-4">
-                            <img src={f_5} alt="f_1" className="w-full food-img" />
+                            <img src={f_5} alt="f_1" className="w-full food-big food-img" />
                             <img src={f_3} alt="f_1" className="w-full mt-2 food-img" />
                         </div>
                         <div className="col-md-4">
@@ -71,7 +77,7 @@ const Homepage = () => {
                             <img src={f_4} alt="f_1" className="w-full w-full mt-2 food-img"/>
                         </div>
                         <div className="col-md-4">
-                            <img src={f_6} alt="f_1" className="w-full food-img"/>
+                            <img src={f_6} alt="f_1" className="w-full food-big food-img"/>
                             <img src={f_7} alt="f_1" className="w-full w-full mt-2 food-img"/>
                         </div>
                     </div>
@@ -82,7 +88,10 @@ const Homepage = () => {
 
             <section className="offer-part container mt-8">
                 <div className="flex justify-between items-center mb-3">
-                    <h1 className="text-gray-200">Spacial Offer</h1>
+                    <div>
+                        <h1 className="text-gray-200">Spacial Offer</h1>
+                        <div className="hm-topic-underline"></div>
+                    </div>
                     <Link to="" className="visit-btn rounded-full font-semibold">See more</Link>
                 </div>
                 <div>

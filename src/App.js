@@ -13,8 +13,26 @@ import Product from './Components/Product page/Poduct';
 import Navigation from './Components/shared/Navbar/Navbar';
 import Excercise from './Components/Excercise Page/Excercise';
 import Footer from './Components/shared/Footer/Footer';
+import useServices from './hooks/useServices';
+import { useEffect, useState } from 'react';
 
 function App() {
+
+  const [ services ] = useServices();
+  const [reload, setReload] = useState(false)
+
+  // useEffect(()=>{
+  //   handleReload();
+  // }, [reload])
+  //   const handleReload = () =>{
+  //     if(reload){
+  //       setReload(false);
+  //     }
+  //     else{
+  //       setReload(true)
+  //     }
+  //   }
+
   return (
     <div className="App">
       {/* <AuthPro> */}
@@ -23,7 +41,7 @@ function App() {
           {/* <Navigation /> */}
         <Switch>
           <PrivateRoute exact path="/details/:id">
-            <ServiceDetails />
+            <ServiceDetails services={services}  />
           </PrivateRoute>
           <PrivateRoute exact path="/products">
             <Product />

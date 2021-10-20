@@ -13,9 +13,10 @@ const Services = (props) => {
             <img src={img} alt="" className="service-card-img" />
             <div className="px-4 pt-2 service-details">
                 <h1 className="text-3xl font-bold service-title">{name}</h1>
-                <h3 className="text-xl">{description}</h3>
+                <h3 className="text-xl hm-service-des">{description}</h3>
             </div>
-            <Link to={`/details/${name}`} state={{ from: props.service }} className="visit-btn rounded-full font-semibold">Details</Link>
+            <Link to={`/details/${id}`} className="visit-btn rounded-full font-semibold">Details</Link>
+            {/* <Link to={{pathname:`/details`, state:props.name}} className="visit-btn rounded-full font-semibold">Details</Link> */}
         </div>
      );
 }

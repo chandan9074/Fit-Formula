@@ -9,7 +9,7 @@ const useFirebase = () =>{
     const [user, setUser] = useState({});
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const location = useLocation();
     const history = useHistory();
     const redirectUrl = location.state?.form || '/';
@@ -18,34 +18,29 @@ const useFirebase = () =>{
 
     const auth = getAuth();
     const createSingInWithEmail = (e) =>{
-        console.log("hello dhukche")
-        console.log(email, password)
+        e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password)
         .then((res) => {
-            // Signed in 
             setUser(res.user);
-            // console.log("hello", res.user)
-            // ...
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
         });
-        e.preventDefault();
     }
     const signInWithEmail = (e) =>{
-        setLoading(true);
+        e.preventDefault();
+        // setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
             setUser(res.user);
             history.push(redirectUrl)})
-        .finally(() => setLoading(false))
+        // .finally(() => setLoading(false))
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
         });
 
-        e.preventDefault();
     }
 
     const googleSignIn = () => {

@@ -20,7 +20,7 @@ const Registation = () => {
     // const [email, setEmail] = useState("");
     // const [password, setPassword] = useState("");
     const {setEmail, setPassword, createSingInWithEmail, googleSignIn} = useAuth();
-    const [isLogin , setIsLogin] = useState(false);
+    const [isLogin , setIsLogin] = useState(true);
     
 
 

@@ -30,14 +30,14 @@ const Navigation = () => {
                     {/* <Nav.Link href="#pricing">Home op2</Nav.Link> */}
                 </Nav>
                 <Nav>
-                    <img src={user.photoUrl} alt="" />
+                    <Nav.Link><img src={user.photoURL} alt="" className="nav-user-img" /></Nav.Link>
                     <Nav.Link>{user.displayName}</Nav.Link>
                     {user.email? 
                 <Nav.Link>
-                        <Link to="/"  className="nav-btn" onClick={logout}>Logout</Link>
+                        <Link to="/"  className="nav-btn nav-account-btn" onClick={logout}>Logout</Link>
                     </Nav.Link>:
-                    <Nav.Link href="/accounts">
-                        Registration
+                    <Nav.Link >
+                        <Link to="/accounts"  className="nav-btn nav-account-btn" onClick={logout}>Registration</Link>
                     </Nav.Link>    
                 }
                 </Nav>

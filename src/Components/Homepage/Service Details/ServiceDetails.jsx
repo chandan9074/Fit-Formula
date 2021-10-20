@@ -1,30 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 import useServices from '../../../hooks/useServices';
+import Navigation from '../../shared/Navbar/Navbar';
 import Details from './Details';
 
 
-const ServiceDetails = () => {
+const ServiceDetails = (props) => {
 
-    const [loadServices , setLoadServices] = useState([]);
-    const [services] = useServices();
+    // const [loadServices , setLoadServices] = useState([]);
+    const [ services ] = useServices();
+    console.log("krishno", services);
+    // const { services } = props;
     const {id} = useParams();
-    // console.log(id)
-    console.log(services);
+    const singleService = services.filter(service => service.id == id);
+    // const {img} = singleService[0];
 
-    useEffect(()=>{
-        // const service = services.find(service=> service.id == id)
-        // console.log("ajsdhfkajsdhf", service);
-        fetch("./fake.json")
-            .then(res => res.json())
-            .then(res => console.log("alkdfjalsdaksd",res))
-    }, [])
+    // useEffect(()=>{
+    //     props.handleReload();
+    // }, [])
+
 
     return ( 
         <div>
-            {
-                // loadServices.map(service => {service.id===id ? <Details /> : null })
-            }
+            <Navigation />
+            <div>
+                {/* <img src={img} alt="" /> */}
+            </div>
         </div>
      );
 }

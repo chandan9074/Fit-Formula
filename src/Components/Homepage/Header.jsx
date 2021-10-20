@@ -13,37 +13,37 @@ const Header = () => {
         <Carousel fade className="h-50">
             <Carousel.Item>
                 <img
-                className="d-block w-100"
+                className="d-block caraousel-img"
                 src={img1}
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                <h3>Success usually comes to those who are too busy to be looking for it</h3>
+                <p>— Henry David Thoreau</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="d-block w-100"
+                className="d-block caraousel-img"
                 src={img2}
                 alt="Second slide"
                 />
 
                 <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <h3>If you think lifting is dangerous, try being weak. Being weak is dangerous</h3>
+                <p>— Bret Contreras</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="d-block w-100"
+                className="d-block caraousel-img"
                 src={img3}
                 alt="Third slide"
                 />
 
                 <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                <h3>Things may come to those who wait, but only the things left by those who hustle</h3>
+                <p>— Abraham Lincoln</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

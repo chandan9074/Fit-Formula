@@ -10,3 +10,18 @@
 .nav-btn:hover {
   color: rgb(253, 252, 252);
 }
+.nav-account-btn {
+  border: 1px solid rgb(34, 196, 142);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem;
+}
+.nav-user-img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.2rem;
+  border: 1px solid aquamarine;
+}
+.nav-account-btn:hover {
+  border: 1px solid aquamarine;
+  /* border-radius: 0.5rem; */
+}

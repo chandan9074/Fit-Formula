@@ -39,7 +39,7 @@ const Login = (props) => {
                     <input type="password" required onChange={handlePassword} placeholder="Enter Password" className="inpt-f" />
                     <button type="submit" className="visit-btn rounded-lg font-semibold mt-3">Login</button>
             </form>
-                <p className="text-gray-300 font-semibold mt-2">Already have an account? <button onClick={handleLogin} className="sign">Registration</button></p>
+                <p className="text-gray-300 font-semibold mt-2">Create a new account? <button onClick={handleLogin} className="sign">Registration</button></p>
                 <p className="text-gray-300 text-md">-----or You can also use this------</p>
                     <div className="flex justify-center">
                         <button onClick={googleSignIn}><img src={google} alt="google" className="google-btn" /></button>
