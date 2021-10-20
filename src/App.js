@@ -15,6 +15,7 @@ import Excercise from './Components/Excercise Page/Excercise';
 import Footer from './Components/shared/Footer/Footer';
 import useServices from './hooks/useServices';
 import { useEffect, useState } from 'react';
+import NotFound from './Components/Not Found page/NotFound';
 
 function App() {
 
@@ -57,6 +58,9 @@ function App() {
           </Route>
           <Route exact path="/accounts">
             <Registation />
+          </Route>
+          <Route exact path="*">
+            <NotFound />
           </Route>
         </Switch>
             <Footer />
