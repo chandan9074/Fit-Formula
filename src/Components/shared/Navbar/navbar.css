@@ -23,5 +23,7 @@
 }
 .nav-account-btn:hover {
   border: 1px solid aquamarine;
-  /* border-radius: 0.5rem; */
+}
+.nav-logo {
+  width: 7rem;
 }

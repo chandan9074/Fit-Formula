@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import fit_formula from './images/fit-formula.png';
 
 // import files 
 import './navbar.css'
@@ -13,31 +14,29 @@ const Navigation = () => {
     return ( 
         <Navbar collapseOnSelect expand="lg" className="hello" variant="dark">
             <Container>
-            <Navbar.Brand href="/">Fit Formula</Navbar.Brand>
+            <Navbar.Brand href="/"><img src={fit_formula} alt="" className="nav-logo" /></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="me-auto">
-                    {/* <Nav.Link href="#features" className="text-white">Home</Nav.Link> */}
+                <Nav className="me-auto md:ml-20">
                     <Nav.Link>
-                        <Link to="/"  className="nav-btn">Home</Link>
+                        <Link to="/"  className="nav-btn text-xl">Home</Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link to="/products"  className="nav-btn">Product</Link>
+                        <Link to="/products"  className="nav-btn text-xl">Product</Link>
                     </Nav.Link>
                     <Nav.Link>
-                        <Link to="/excercise"  className="nav-btn">Excercise</Link>
+                        <Link to="/excercise"  className="nav-btn text-xl">Excercise</Link>
                     </Nav.Link>
-                    {/* <Nav.Link href="#pricing">Home op2</Nav.Link> */}
                 </Nav>
                 <Nav>
                     <Nav.Link><img src={user.photoURL} alt="" className="nav-user-img" /></Nav.Link>
-                    <Nav.Link>{user.displayName}</Nav.Link>
+                    <Nav.Link className=" text-xl">{user.displayName}</Nav.Link>
                     {user.email? 
                 <Nav.Link>
-                        <Link to="/"  className="nav-btn nav-account-btn" onClick={logout}>Logout</Link>
+                        <Link to="/"  className="nav-btn nav-account-btn  text-xl" onClick={logout}>Logout</Link>
                     </Nav.Link>:
                     <Nav.Link >
-                        <Link to="/accounts"  className="nav-btn nav-account-btn" onClick={logout}>Registration</Link>
+                        <Link to="/accounts"  className="nav-btn nav-account-btn  text-xl" onClick={logout}>Registration</Link>
                     </Nav.Link>    
                 }
                 </Nav>

@@ -30,12 +30,10 @@ const useFirebase = () =>{
     }
     const signInWithEmail = (e) =>{
         e.preventDefault();
-        // setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
         .then((res) => {
             setUser(res.user);
             history.push(redirectUrl)})
-        // .finally(() => setLoading(false))
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;

@@ -1,14 +1,11 @@
 // import pakages
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-// import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import initializeAuthentication from '../../firebase/firebase.init'
+
 // import files
 import reg from './images/reg.jpg';
 import useFirebase from '../../hooks/useFirebase';
 import Navigation from '../shared/Navbar/Navbar';
 import Login from './Login';
-// import useServices from '../../hooks/useServices';
 import useAuth from '../../hooks/useAuth';
 import homebg from '../Homepage/images/hm-bg.png';
 import google from './images/google.png';
@@ -17,48 +14,23 @@ import './accounts.css';
 
 const Registation = () => {
 
-    // const [email, setEmail] = useState("");
-    // const [password, setPassword] = useState("");
     const {setEmail, setPassword, createSingInWithEmail, googleSignIn} = useAuth();
     const [isLogin , setIsLogin] = useState(true);
-    
-
-
-    // const auth = getAuth();
 
     const handleEmail = (e) =>{
         setEmail(e.target.value);
     }
-    
     const handlePassword = (e) =>{
         setPassword(e.target.value);
     }
 
+    // handle toggle by those function 
     const handleLogin = () =>{
         setIsLogin(true);
     }
     const handleSignIn = () =>{
         setIsLogin(false);
     }
-
-    // const handleSubmitForm = (e) =>{
-    //     console.log(email, password)
-    //     createUserWithEmailAndPassword(auth, email, password)
-    //     .then((userCredential) => {
-    //     // Signed in 
-    //     const user = userCredential.user;
-    //     console.log(user)
-    //     // ...
-    //     })
-    //     .catch((error) => {
-    //         const errorCode = error.code;
-    //         const errorMessage = error.message;
-    //         // ..
-    //     });
-
-    //     e.preventDefault();
-    // }
-    
 
     return ( 
         <div>
@@ -67,8 +39,8 @@ const Registation = () => {
             <div className="flex  reg-card justify-center mt-20">
                 <div className="reg-card hidden md:block">
                     <img src={reg} alt="" className=" reg-img" />
-                </div>
-            
+                </div>       
+                {/* handle login and registration toggle  */}
                 {isLogin? <Login handleSignIn={handleSignIn} /> :
                 <div className="p-10 bg-gray-600 reg-right-part">
                 <h1 className="text-gray-200">Registration</h1>

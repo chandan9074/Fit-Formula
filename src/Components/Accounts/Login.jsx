@@ -1,8 +1,6 @@
 // import pakages
 import React from 'react';
-import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-// import useFirebase from '../../hooks/useFirebase';
 import google from './images/google.png';
 
 // import files 
@@ -10,26 +8,18 @@ import './accounts.css';
 
 const Login = (props) => {
 
-    // const {handleSignIn} = props;
-
     const {setEmail, setPassword, signInWithEmail, googleSignIn} = useAuth();
-    const location = useLocation();
-
 
     const handleEmail = (e) =>{
         setEmail(e.target.value);
     }
-    
     const handlePassword = (e) =>{
         setPassword(e.target.value);
     }
-
     const handleLogin = () =>{
-        // setIsLogin(true);
         props.handleSignIn()
 
     }
-
 
     return ( 
         <div className="p-10 bg-gray-600 reg-right-part">
@@ -39,11 +29,11 @@ const Login = (props) => {
                     <input type="password" required onChange={handlePassword} placeholder="Enter Password" className="inpt-f" />
                     <button type="submit" className="visit-btn rounded-lg font-semibold mt-3">Login</button>
             </form>
-                <p className="text-gray-300 font-semibold mt-2">Create a new account? <button onClick={handleLogin} className="sign">Registration</button></p>
-                <p className="text-gray-300 text-md">-----or You can also use this------</p>
-                    <div className="flex justify-center">
-                        <button onClick={googleSignIn}><img src={google} alt="google" className="google-btn" /></button>
-                    </div>
+            <p className="text-gray-300 font-semibold mt-2">Create a new account? <button onClick={handleLogin} className="sign">Registration</button></p>
+            <p className="text-gray-300 text-md">-----or You can also use this------</p>
+            <div className="flex justify-center">
+                <button onClick={googleSignIn}><img src={google} alt="google" className="google-btn" /></button>
+            </div>
         </div>
      );
 }

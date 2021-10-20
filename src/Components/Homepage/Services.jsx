@@ -16,7 +16,6 @@ const Services = (props) => {
                 <h3 className="text-xl hm-service-des">{description}</h3>
             </div>
             <Link to={`/details/${id}`} className="visit-btn rounded-full font-semibold">Details</Link>
-            {/* <Link to={{pathname:`/details`, state:props.name}} className="visit-btn rounded-full font-semibold">Details</Link> */}
         </div>
      );
 }

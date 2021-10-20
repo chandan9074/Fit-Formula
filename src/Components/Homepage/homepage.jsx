@@ -1,10 +1,9 @@
 // import pakages
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 // import files
 import Navigation from '../shared/Navbar/Navbar';
-import Footer from '../shared/Footer/Footer';
 import homebg from './images/hm-bg.png';
 import './homepage.css';
 import Header from './Header';
@@ -23,20 +22,12 @@ import o_2 from './images/o-2.jpg';
 
 const Homepage = () => {
     const [services] = useServices();
-    console.log("chandan",services);
-    
-
-    // useEffect(()=>{
-    //     fetch("./fake.json")
-    //         .then(res => res.json())
-    //         .then(res => console.log("hello", res))
-    // }, [])
 
     return ( 
         <div className="homapage-part">
             <img src={homebg} alt="" className="home-bg" srcset="" />
-            <Navigation />
             {/* navigation part  */}
+            <Navigation />
 
             {/* header part  */}
             <Header />
@@ -98,18 +89,12 @@ const Homepage = () => {
                     <img src={o_1} alt="o-1" className="offer-img-1 rounded-full" />
                     <img src={o_2} alt="o-2" className="offer-img-2 rounded-full"/>
                     <div className="bg-gray-600 offer-des flex flex-col items-center">
-                        <h1 className="md:text-2xl text-xl font-bold text-gray-300">MONTHLY</h1>
-                        <p className="md:text-3xl text-2xl font-extrabold text-gray-300">30%</p>
+                        <h1 className="md:text-2xl text-lg font-bold text-gray-300">MONTHLY</h1>
+                        <p className="md:text-3xl text-xl font-extrabold text-gray-300">30%</p>
                         <Link to="" className="visit-btn p-2 rounded-lg font-semibold">See more</Link>
                     </div>
                 </div>
-
             </section>
-
-            {/* footer part 
-            <div className="footer-part" >
-            <Footer />
-            </div> */}
         </div>
      );
 }

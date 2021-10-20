@@ -66,7 +66,6 @@ const Excercise = () => {
                         <p className="excercise-point text-xl font-bold">Suspension Trainer Biceps Curl</p>
                     </div>
                 </div>
-
                 <div className="flex md:flex-row flex-col justify-center md:justify-around mt-36">
                     <div className="w-80 flex flex-col justify-center items-center">
                         <img src={g_1} alt="g-1" className="gymn-img" />
@@ -82,10 +81,8 @@ const Excercise = () => {
                         <img src={g_3} alt="g-1" className="gymn-img"/>
                         <p className="text-white w-60 text-center mt-2">Hard days are the best because that's when champions are made</p>
                         <p className="text-white  mt-0">- Gabby douglas</p>
-
                     </div>
                 </div>
-
             </div>
         </div>
      );

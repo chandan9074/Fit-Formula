@@ -10,40 +10,38 @@ import './homepage.css'
 
 const Header = () => {
     return ( 
-        <Carousel fade className="h-50">
+        <Carousel fade >
             <Carousel.Item>
                 <img
-                className="d-block caraousel-img"
+                className="d-block w-100"
                 src={img1}
                 alt="First slide"
                 />
                 <Carousel.Caption>
-                <h3>Success usually comes to those who are too busy to be looking for it</h3>
-                <p>— Henry David Thoreau</p>
+                <h3 className="md:text-3xl text-sm">Success usually comes to those who are too busy to be looking for it</h3>
+                <p className="md:text-xl text-xs">— Henry David Thoreau</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="d-block caraousel-img"
+                className="d-block w-100"
                 src={img2}
                 alt="Second slide"
                 />
-
                 <Carousel.Caption>
-                <h3>If you think lifting is dangerous, try being weak. Being weak is dangerous</h3>
-                <p>— Bret Contreras</p>
+                <h3 className="md:text-3xl text-sm">If you think lifting is dangerous, try being weak. Being weak is dangerous</h3>
+                <p className="md:text-xl text-xs">— Bret Contreras</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
                 <img
-                className="d-block caraousel-img"
+                className="d-block w-100"
                 src={img3}
                 alt="Third slide"
                 />
-
                 <Carousel.Caption>
-                <h3>Things may come to those who wait, but only the things left by those who hustle</h3>
-                <p>— Abraham Lincoln</p>
+                <h3 className="md:text-3xl text-sm">Things may come to those who wait, but only the things left by those who hustle</h3>
+                <p className="md:text-xl text-xs">— Abraham Lincoln</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

@@ -18,3 +18,7 @@
   transition: 0.5s;
   cursor: pointer;
 }
+.pro-topic-underline {
+  width: 12rem;
+  border-top: 3px solid rgb(155, 154, 154);
+}
